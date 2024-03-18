@@ -4,7 +4,7 @@
 
 ## Demo
 
-Soon...
+https://maciejcepielik.github.io/to-do-list-react/
 
 ## Description
 
