@@ -1,6 +1,6 @@
 # To do list
 
-Soon...
+![demo](https://raw.githubusercontent.com/maciejcepielik/to-do-list-react/main/public/demo.gif)
 
 ## Demo
 
