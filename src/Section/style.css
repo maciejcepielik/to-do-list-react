@@ -9,11 +9,9 @@
     background-color: white;
     font-weight: bold;
     font-size: large;
-}
-
-.section__title--checkList {
     border: none;
 }
+
 
 .section__checkList {
     display: grid;
