@@ -1,9 +1,3 @@
-.checkList {
-    border: 1px solid #dddddd;
-    padding: 20px;
-    background-color: white;
-}
-
 .checkList__allTasks {
     list-style-type: none;
     padding: 0;

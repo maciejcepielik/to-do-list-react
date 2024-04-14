@@ -3,7 +3,7 @@
     margin: 10px;
 }
 
-.section__title {
+.section__titleName {
     padding: 15px;
     background-color: white;
     font-weight: bold;
@@ -28,4 +28,10 @@
     .section__checkList {
         grid-template-columns: 1fr;
     }
+}
+
+.checkList {
+    border: 1px solid #dddddd;
+    padding: 20px;
+    background-color: white;
 }
