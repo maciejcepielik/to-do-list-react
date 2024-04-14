@@ -1,9 +1,9 @@
-.container {
+.section {
     background-color: #eeeeee;
     margin: 10px;
 }
 
-.container__title {
+.section__title {
     border: 1px solid #dddddd;
     padding: 15px;
     background-color: white;
@@ -11,11 +11,11 @@
     font-size: large;
 }
 
-.container__title--checkList {
+.section__title--checkList {
     border: none;
 }
 
-.container--checkList {
+.section--checkList {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
@@ -28,7 +28,7 @@
 }
 
 @media (max-width: 768px) {
-    .container--checkList {
+    .section--checkList {
         grid-template-columns: 1fr;
     }
 }
