@@ -2,7 +2,7 @@ import "./style.css";
 
 const Section = ({ title, body, extraHeaderContent }) => (
     <section className="section">
-        <div className="section--checkList">
+        <div className="section__checkList">
             <div className="section__title section__title--checkList">{title}</div>
             {extraHeaderContent}
         </div>
