@@ -6,7 +6,7 @@ const Section = ({ title, body, extraHeaderContent }) => (
       <div className="section__titleName">{title}</div>
       {extraHeaderContent}
     </div>
-    <div className="checkList">
+    <div className="section__checkList">
       {body}
     </div>
   </section>
