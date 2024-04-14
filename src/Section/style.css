@@ -12,7 +12,7 @@
 }
 
 
-.section__checkList {
+.section__title {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
@@ -25,7 +25,7 @@
 }
 
 @media (max-width: 768px) {
-    .section__checkList {
+    .section__title {
         grid-template-columns: 1fr;
     }
 }
