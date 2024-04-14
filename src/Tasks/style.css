@@ -1,10 +1,10 @@
-.checkList__allTasks {
+.tasks {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.checkList__item {
+.tasks__item {
     display: grid;
     grid-template-columns: 50px 1fr 50px;
     align-items: center;
@@ -12,19 +12,19 @@
     padding: 10px;
 }
 
-.checkList__item--hidden {
+.tasks__item--hidden {
     display: none;
 }
 
-.checkList__task {
+.tasks__task {
     padding: 0 5px;
 }
 
-.checkList__task--done {
+.tasks__task--done {
     text-decoration: line-through;
 }
 
-.checkList__button {
+.tasks__button {
     background-color: white;
     width: 30px;
     height: 30px;
@@ -38,20 +38,20 @@
     color: white
 }
 
-.checkList__button--done {
+.tasks__button--done {
     background-color: hsl(120, 85%, 39%);
     transition: 0.5s;
 }
 
-.checkList__button--done:hover {
+.tasks__button--done:hover {
     background-color: hsl(120, 85%, 55%);
 }
 
-.checkList__button--remove {
+.tasks__button--remove {
     background-color: hsl(0, 85%, 39%);
     transition: 0.5s;
 }
 
-.checkList__button--remove:hover {
+.tasks__button--remove:hover {
     background-color: hsl(0, 85%, 55%);
 }
