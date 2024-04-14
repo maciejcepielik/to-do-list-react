@@ -11,7 +11,7 @@
     }
 }
 
-.buttons__hideComplete {
+.buttons__button {
     background-color: transparent;
     border: none;
     color: teal;
@@ -21,16 +21,16 @@
 }
 
 @media (max-width: 768px) {
-    .buttons__hideComplete {
+    .buttons__button {
         margin: 0 auto 20px;
     }
 }
 
-.buttons__hideComplete:hover {
+.buttons__button:hover {
     color: hsl(180, 100%, 35%);
 }
 
-.buttons__hideComplete:disabled {
+.buttons__button:disabled {
     cursor: not-allowed;
     color: rgb(179, 179, 179);
 }
