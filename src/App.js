@@ -8,6 +8,7 @@ import Main from "./Main";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
+
   const [tasks, setTasks] = useState([
     { id: 1, content: "wyprowadzić psa na spacer", done: true },
     { id: 2, content: "pójść na trening", done: false },
@@ -30,7 +31,14 @@ function App() {
 
       return task;
     }));
-  }
+  };
+
+  const allTasksDone = () => {
+    setTasks(tasks => tasks.map(task => ({
+      ...task,
+      done: true
+    })));
+  };
 
   return (
     <Main>
@@ -56,6 +64,7 @@ function App() {
             tasks={tasks}
             hideDone={hideDone}
             toggleHideDone={toggleHideDone}
+            allTasksDone={allTasksDone}
           />
         }
       />
