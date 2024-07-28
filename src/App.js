@@ -5,6 +5,13 @@ import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from "./Header";
 import Main from "./Main";
+import { ThemeProvider } from "styled-components";
+
+const theme = {
+  breakpoints: {
+    mobile: 768
+  },
+};
 
 const initialTasks = [
   { id: 1, content: "wyprowadzić psa na spacer", done: true },
@@ -24,7 +31,6 @@ const storedTasks = () => {
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
-
   const [tasks, setTasks] = useState(storedTasks);
 
   useEffect(() => {
@@ -68,34 +74,34 @@ function App() {
   };
 
   return (
-    <Main>
-      <Header title="Lista zadań" />
-
-      <Section
-        title="Dodaj nowe zadanie"
-        body={<Form addNewTask={addNewTask} />}
-      />
-
-      <Section
-        title="Lista zadań"
-        body={
-          <Tasks
-            tasks={tasks}
-            hideDone={hideDone}
-            removeTask={removeTask}
-            toggleTaskDone={toggleTaskDone}
-          />
-        }
-        extraHeaderContent={
-          <Buttons
-            tasks={tasks}
-            hideDone={hideDone}
-            toggleHideDone={toggleHideDone}
-            setAllDone={setAllDone}
-          />
-        }
-      />
-    </Main>
+    <ThemeProvider theme={theme}>
+      <Main>
+        <Header title="Lista zadań" />
+        <Section
+          title="Dodaj nowe zadanie"
+          body={<Form addNewTask={addNewTask} />}
+        />
+        <Section
+          title="Lista zadań"
+          body={
+            <Tasks
+              tasks={tasks}
+              hideDone={hideDone}
+              removeTask={removeTask}
+              toggleTaskDone={toggleTaskDone}
+            />
+          }
+          extraHeaderContent={
+            <Buttons
+              tasks={tasks}
+              hideDone={hideDone}
+              toggleHideDone={toggleHideDone}
+              setAllDone={setAllDone}
+            />
+          }
+        />
+      </Main>
+    </ThemeProvider>
   );
 }
 
