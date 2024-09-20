@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
@@ -6,7 +6,7 @@ import Section from "./Section";
 import Header from "./Header";
 import Main from "./Main";
 import { ThemeProvider } from "styled-components";
-import { initialTasks } from "./initialTasks";
+import { useTasks } from "./useTasks";
 
 const theme = {
   breakpoints: {
@@ -19,70 +19,6 @@ function App() {
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone)
-  };
-
-  const useLocalStorageTasks = () => {
-    const storedTasks = () => {
-      const localStorageTasks = localStorage.getItem('tasks');
-
-      return (
-        localStorageTasks
-          ? JSON.parse(localStorageTasks)
-          : initialTasks
-      )
-    };
-
-    const [tasks, setTasks] = useState(storedTasks);
-
-    useEffect(() => {
-      localStorage.setItem("tasks", JSON.stringify(tasks))
-    }, [tasks]);
-
-    return [tasks, setTasks];
-  };
-
-  const useTasks = () => {
-    const [tasks, setTasks] = useLocalStorageTasks();
-
-    const removeTask = (id) => {
-      setTasks(tasks => tasks.filter(task => task.id !== id))
-    };
-
-    const toggleTaskDone = (id) => {
-      setTasks(tasks => tasks.map(task => {
-        if (task.id === id) {
-          return { ...task, done: !task.done };
-        }
-
-        return task;
-      }));
-    };
-
-    const setAllDone = () => {
-      setTasks(tasks => tasks.map(task => ({
-        ...task,
-        done: true
-      })));
-    };
-
-    const addNewTask = (content) => {
-      setTasks(tasks => [
-        ...tasks,
-        {
-          content,
-          done: false,
-          id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
-        }
-      ])
-    };
-
-    return {
-      tasks,
-      removeTask,
-      toggleTaskDone,
-      setAllDone,
-      addNewTask,
-    };
   };
 
   const {
