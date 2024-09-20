@@ -14,16 +14,6 @@ const theme = {
   },
 };
 
-const storedTasks = () => {
-  const localStorageTasks = localStorage.getItem('tasks');
-
-  return (
-    localStorageTasks
-      ? JSON.parse(localStorageTasks)
-      : initialTasks
-  )
-};
-
 function App() {
   const [hideDone, setHideDone] = useState(false);
 
@@ -31,12 +21,28 @@ function App() {
     setHideDone(hideDone => !hideDone)
   };
 
-  const useTasks = () => {
+  const useLocalStorageTasks = () => {
+    const storedTasks = () => {
+      const localStorageTasks = localStorage.getItem('tasks');
+
+      return (
+        localStorageTasks
+          ? JSON.parse(localStorageTasks)
+          : initialTasks
+      )
+    };
+
     const [tasks, setTasks] = useState(storedTasks);
 
     useEffect(() => {
       localStorage.setItem("tasks", JSON.stringify(tasks))
     }, [tasks]);
+
+    return [tasks, setTasks];
+  };
+
+  const useTasks = () => {
+    const [tasks, setTasks] = useLocalStorageTasks();
 
     const removeTask = (id) => {
       setTasks(tasks => tasks.filter(task => task.id !== id))
