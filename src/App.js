@@ -7,12 +7,7 @@ import Header from "./Header";
 import Main from "./Main";
 import { ThemeProvider } from "styled-components";
 import { useTasks } from "./useTasks";
-
-const theme = {
-  breakpoints: {
-    mobile: 768
-  },
-};
+import { theme } from "./theme";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
