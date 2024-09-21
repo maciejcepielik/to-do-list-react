@@ -19,10 +19,12 @@ Additionally, you can show/hide completed tasks and mark all incomplete tasks as
 - HTML
 - CSS with BEM convention
 - JavaScript
+- Styled components
 - MediaQueries
 - Grid
 - Flex
 - Immutability
+- useState, useEffect, useRef, custom Hook
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
