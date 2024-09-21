@@ -11,7 +11,7 @@ export const Item = styled.li`
     grid-template-columns: 50px 1fr 50px;
     align-items: center;
     border-bottom: 1px solid ${({ theme }) => theme.color.alto};
-    padding: 10px;
+    padding: 10px 0;
 
     ${({ hidden }) => hidden && css`
         display: none;
