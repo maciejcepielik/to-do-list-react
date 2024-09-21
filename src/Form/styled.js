@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
-    background-color: white;
+    background-color: ${({ theme }) => theme.color.white};
     display: grid;
     grid-template-columns: minmax(200px, 1fr) auto;
     grid-gap: 20px;
@@ -13,8 +13,8 @@ export const StyledForm = styled.form`
 `;
 
 export const FormButton = styled.button`
-    color: white;
-    background-color: teal;
+    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.teal};
     padding: 10px;
     border: none;
     justify-self: end;
@@ -28,17 +28,17 @@ export const FormButton = styled.button`
     }
 
     &:hover {
-        background-color: rgb(0, 177, 177);
+        background-color: ${({ theme }) => theme.color.bondiBlue};
         transform: scale(1.1);
     }
 
     &:active {
-        background-color: rgb(0, 165, 165);
+        background-color: ${({ theme }) => theme.color.persianGreen};
     }
 `;
 
 export const FormField = styled.input`
-    border: 1px solid #dddddd;
+    border: 1px solid ${({ theme }) => theme.color.alto};
     height: 38px;
     width: 100%;
     display: inline-block;

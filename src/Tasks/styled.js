@@ -10,7 +10,7 @@ export const Item = styled.li`
     display: grid;
     grid-template-columns: 50px 1fr 50px;
     align-items: center;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid ${({ theme }) => theme.color.alto};
     padding: 10px;
 
     ${({ hidden }) => hidden && css`
@@ -27,7 +27,7 @@ export const Task = styled.span`
 `;
 
 export const TasksButton = styled.button`
-    background-color: white;
+    background-color: ${({ theme }) => theme.color.white};
     width: 30px;
     height: 30px;
     display: flex;
@@ -37,22 +37,22 @@ export const TasksButton = styled.button`
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    color: white;
+    color: ${({ theme }) => theme.color.white};
     transition: 0.5s;
 
     ${({ toggleDone }) => toggleDone && css`
-        background-color: hsl(120, 85%, 39%);
+        background-color: ${({ theme }) => theme.color.malachite};
 
         &:hover {
-            background-color: hsl(120, 85%, 55%);
+            filter: brightness(120%);
         }
     `};
 
     ${({ remove }) => remove && css`
-        background-color: hsl(0, 85%, 39%);
+        background-color: ${({ theme }) => theme.color.milanoRed};
 
         &:hover {
-            background-color: hsl(0, 85%, 55%);
+            filter: brightness(130%);
         }
     `};
 `;

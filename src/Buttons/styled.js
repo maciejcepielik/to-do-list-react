@@ -14,7 +14,7 @@ export const ButtonsArrangement = styled.div`
 export const ButtonsButton = styled.button`
     background-color: transparent;
     border: none;
-    color: teal;
+    color: ${({ theme }) => theme.color.teal};
     margin-left: 10px;
     cursor: pointer;
     transition: 0.5s;
@@ -24,11 +24,11 @@ export const ButtonsButton = styled.button`
     }
 
     &:hover {
-        color: hsl(180, 100%, 35%);
+        color: ${({ theme }) => theme.color.bondiBlue};
     }
 
     &:disabled {
         cursor: not-allowed;
-        color: rgb(179, 179, 179);
+        color: ${({ theme }) => theme.color.nobel};
     }
 `;
